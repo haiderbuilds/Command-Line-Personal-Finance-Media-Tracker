@@ -7,6 +7,11 @@ def main():
     if action == "WITHDRAW":
         withdrawal = float(input("How much do you want to withdraw: "))
         print("Withdraw successful your ramining balance is:", withdraw(bank_balance, withdrawal))
+    elif action == "DEPOSIT":
+        deposit_amount = float(input("How much do you want to deposit: "))
+        print("Deposit successful, you are bank balance is:",deposit(bank_balance, deposit_amount))
+    else:
+        print("Invalid Action.")
 
 def deposit(balance, amount):
     balance += amount
