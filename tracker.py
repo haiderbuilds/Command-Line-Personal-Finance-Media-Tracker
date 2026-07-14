@@ -1,21 +1,28 @@
 def main():
     user_name = input("Enter Your Name: ").strip().title()
-    bank_balance = int(input("Enter Your Bank Balance: "))
-    print(f"Welcome {user_name}")
+    bank_balance = int(input("Enter Your initial Bank Balance: "))
+    print(f"Welcome {user_name}, your initial bank balance is: {bank_balance}")
 
     action = input("Do you want to deposit or withdraw? ").strip().upper()
     if action == "WITHDRAW":
         withdrawal = float(input("How much do you want to withdraw: "))
+
         #overdraft protection
         if withdrawal > bank_balance:
             print("insufficient funds.")
         else:
-            print("Withdraw successful your ramining balance is:", withdraw(bank_balance, withdrawal))
+            bank_balance = withdraw(bank_balance, withdrawal)
+            print("Withdraw successful, your ramining balance is:", bank_balance)
     elif action == "DEPOSIT":
         deposit_amount = float(input("How much do you want to deposit: "))
-        print("Deposit successful, you are bank balance is:",deposit(bank_balance, deposit_amount))
+        if deposit_amount > 0:
+            bank_balance = deposit(bank_balance, deposit_amount)
+            print("Deposit successful, your bank balance is:",bank_balance)
+        else:
+            print("Enter correct amount.")
     else:
         print("Invalid Action.")
+    print(bank_balance)
 
 def deposit(balance, amount):
     balance += amount
