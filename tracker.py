@@ -7,12 +7,12 @@ def main():
     if action == "WITHDRAW":
         withdrawal = float(input("How much do you want to withdraw: "))
 
-        #overdraft protection
+        #Overdraft protection
         if withdrawal > bank_balance:
-            print("insufficient funds.")
+            print("Insufficient funds.")
         else:
             bank_balance = withdraw(bank_balance, withdrawal)
-            print("Withdraw successful, your ramining balance is:", bank_balance)
+            print("Withdraw Successful! your remaining balance is:", bank_balance)
     elif action == "DEPOSIT":
         deposit_amount = float(input("How much do you want to deposit: "))
         if deposit_amount > 0:
