@@ -12,12 +12,12 @@ def main():
             print("Insufficient funds.")
         else:
             bank_balance = withdraw(bank_balance, withdrawal)
-            print("Withdraw Successful! your remaining balance is:", bank_balance)
+            print("Withdraw Successful! Your remaining bank balance is:", bank_balance)
     elif action == "DEPOSIT":
         deposit_amount = float(input("How much do you want to deposit: "))
         if deposit_amount > 0:
             bank_balance = deposit(bank_balance, deposit_amount)
-            print("Deposit successful, your bank balance is:",bank_balance)
+            print("Deposit Successful! Your bank balance is:",bank_balance)
         else:
             print("Enter correct amount.")
     else:
