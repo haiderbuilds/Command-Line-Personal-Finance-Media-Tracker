@@ -6,8 +6,6 @@ def main():
     action = input("Do you want to deposit or withdraw? ").strip().upper()
     if action == "WITHDRAW":
         withdrawal = float(input("How much do you want to withdraw: "))
-
-        #Overdraft protection
         if withdrawal > bank_balance:
             print("Insufficient funds.")
         else:
