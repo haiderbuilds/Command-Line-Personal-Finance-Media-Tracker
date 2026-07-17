@@ -5,7 +5,9 @@ def main():
 
     action = input("Do you want to deposit or withdraw? ").strip().upper()
     if action == "WITHDRAW":
-        withdrawal = float(input("How much do you want to withdraw: "))
+        withdrawal = float(input("How much do you want to withdraw: ")) 
+        Category = input("What is the purpose of this withdraw? ")
+        
         if withdrawal > bank_balance:
             print("Insufficient funds.")
         else:
