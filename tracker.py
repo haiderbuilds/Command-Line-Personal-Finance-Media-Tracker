@@ -6,11 +6,24 @@ def main():
     action = input("Do you want to deposit or withdraw? ").strip().upper()
     if action == "WITHDRAW":
         withdrawal = float(input("How much do you want to withdraw: ")) 
-        Category = input("What is the purpose of this withdraw? ")
-        
+        category = input("What is the purpose of this withdraw? ").lower()
+
         if withdrawal > bank_balance:
             print("Insufficient funds.")
         else:
+            match category:
+                case "rent":
+                    necessity_level = "High"
+                case "food":
+                    necessity_level = "High"
+                case "entertainment":
+                    necessity_level = "Low"
+                case "clothes":
+                    necessity_level = "Meidum"
+                case _:
+                    print("Not a valid cetagory!")
+            print("Necessity level:", necessity_level)
+
             bank_balance = withdraw(bank_balance, withdrawal)
             print("Withdraw Successful! Your remaining bank balance is:", bank_balance)
     elif action == "DEPOSIT":
