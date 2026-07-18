@@ -1,4 +1,5 @@
 def main():
+    transactions = []
     user_name = input("Enter Your Name: ").strip().title()
     bank_balance = int(input("Enter Your initial Bank Balance: "))
     print(f"Welcome {user_name}, Your initial bank balance is: {bank_balance}")
