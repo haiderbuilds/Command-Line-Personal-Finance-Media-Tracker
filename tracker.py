@@ -36,6 +36,8 @@ def main():
                 transactions.append({"type": "deposit", "amount": deposit_amount})
             else:
                 print("Enter correct amount.")
+        elif action == "report":
+            print(transactions)
         elif action == "quit":
             break
         else:
