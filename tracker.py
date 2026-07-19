@@ -37,12 +37,20 @@ def main():
             else:
                 print("Enter correct amount.")
         elif action == "report":
-            print(transactions)
+            total_amount = 0
+            print("\n--- Transaction Report ---")
+
+            for transaction in transactions:
+                print(f"type: {transaction["type"]} amount {transaction["amount"]}")
+                total_amount += transaction["amount"]
+            print("\n Toatl transactions =", len(transactions))
+            print("Total amount spent =", total_amount)
+
         elif action == "quit":
             break
         else:
             print("Invalid Action, Try Again.")
-        print(bank_balance)
+        print("Closing balance", bank_balance)
 
 def deposit(balance, amount):
     balance += amount
