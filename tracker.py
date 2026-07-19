@@ -27,11 +27,13 @@ def main():
 
                 bank_balance = withdraw(bank_balance, withdrawal)
                 print("Withdraw Successful! Your remaining bank balance is:", bank_balance)
+                transactions.append({"type": "withdraw", "category": category, "amount": withdrawal})
         elif action == "deposit":
             deposit_amount = float(input("How much do you want to deposit: "))
             if deposit_amount > 0:
                 bank_balance = deposit(bank_balance, deposit_amount)
                 print("Deposit Successful! Your bank balance is:",bank_balance)
+                transactions.append({"type": "deposit", "amount": deposit_amount})
             else:
                 print("Enter correct amount.")
         elif action == "quit":
