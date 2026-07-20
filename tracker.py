@@ -6,8 +6,8 @@ def main():
     while True:
         action = input("Do you want to deposit or withdraw? ").strip().lower()
         if action == "withdraw":
-            withdrawal = float(input("How much do you want to withdraw: ")) 
-            category = input("What is the purpose of this withdraw? ").strip().lower()
+            withdrawal = get_float("How much do you want to withdraw? ")
+            category = input("What is the purpose of this transaction? ").strip().lower()
 
             if withdrawal > bank_balance:
                 print("Insufficient funds.")
@@ -26,13 +26,13 @@ def main():
                 print("Necessity level:", necessity_level)
 
                 bank_balance = withdraw(bank_balance, withdrawal)
-                print("Withdraw Successful! Your remaining bank balance is:", bank_balance)
+                print("Transaction Successful! Your remaining bank balance is:", bank_balance)
                 transactions.append({"type": "withdraw", "category": category, "amount": withdrawal})
         elif action == "deposit":
-            deposit_amount = float(input("How much do you want to deposit: "))
+            deposit_amount = get_float("How much do you want to deposit? ")
             if deposit_amount > 0:
                 bank_balance = deposit(bank_balance, deposit_amount)
-                print("Deposit Successful! Your bank balance is:",bank_balance)
+                print("Transaction Successful! Your bank balance is:",bank_balance)
                 transactions.append({"type": "deposit", "amount": deposit_amount})
             else:
                 print("Enter correct amount.")
@@ -69,6 +69,6 @@ def get_float(prompt):
                 amount = float(input(prompt))
                 return amount
             except ValueError:
-                print("Invalid amount, please enter a correct amount")
+                print("Invalid input. Please enter a number.")
 
 main()
