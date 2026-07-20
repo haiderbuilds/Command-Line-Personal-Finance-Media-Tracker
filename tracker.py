@@ -1,7 +1,7 @@
 def main():
     transactions = []
     user_name = input("Enter Your Name: ").strip().title()
-    bank_balance = int(input("Enter Your initial Bank Balance: "))
+    bank_balance = get_float("Enter Your Intial Bank Balance: ")
     print(f"Welcome {user_name}, Your initial bank balance is: {bank_balance}")
     while True:
         action = input("Do you want to deposit or withdraw? ").strip().lower()
@@ -61,6 +61,14 @@ def withdraw(balance, amount):
     return balance
 
 def format_currency(amount):
-    return f"${amount:,.2f}"    
+    return f"${amount:,.2f}"
+
+def get_float(prompt):
+        while True:
+            try:
+                amount = float(input(prompt))
+                return amount
+            except ValueError:
+                print("Invalid amount, please enter a correct amount")
 
 main()
