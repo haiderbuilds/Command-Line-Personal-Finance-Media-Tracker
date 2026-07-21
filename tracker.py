@@ -41,7 +41,7 @@ def main():
             print("\n--- Transaction Report ---")
 
             for transaction in transactions:
-                print(f"type: {transaction["type"]} amount {transaction["amount"]}")
+                print(f"type: {transaction["type"]}, amount: {transaction["amount"]}")
                 total_amount += transaction["amount"]
             print("\n Toatl transactions =", len(transactions))
             print("Total amount spent =", total_amount)
