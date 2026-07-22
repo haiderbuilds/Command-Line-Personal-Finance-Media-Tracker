@@ -1,8 +1,10 @@
+import sys
+
 def main():
     transactions = []
-    user_name = input("Enter Your Name: ").strip().title()
-    bank_balance = get_float("Enter Your Intial Bank Balance: ")
-    print(f"Welcome {user_name}, Your initial bank balance is: {bank_balance}")
+    #user_name = input("Enter Your Name and intial bank balance: ").strip().title()
+    bank_balance = float(sys.argv[2])
+    print(f"Welcome {sys.argv[1]}, Your initial bank balance is: {sys.argv[2]}")
     while True:
         action = input("Do you want to deposit or withdraw? ").strip().lower()
         if action == "withdraw":
