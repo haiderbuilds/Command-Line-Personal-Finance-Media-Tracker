@@ -61,12 +61,12 @@ def main():
                 print("Enter a correct amount.")
         elif action == "report":
             total_amount = 0
-            print("\n--- Transaction Report ---")
+            print("--- Transaction Report ---")
 
             for transaction in transactions:
                 print(f"type: {transaction["type"]}, amount: {format_currency(transaction["amount"])}")
                 total_amount += transaction["amount"]
-            print("\n Toatl transactions =", len(transactions))
+            print("Toatl transactions =", len(transactions))
             print("Total amount spent =", format_currency(total_amount))
 
         elif action == "quit":
