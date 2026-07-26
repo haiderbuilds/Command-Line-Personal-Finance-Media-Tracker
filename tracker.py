@@ -58,7 +58,7 @@ def main():
                 print("Transaction Successful! Your bank balance is:",format_currency(bank_balance))
                 transactions.append({"type": "deposit", "amount": deposit_amount})
             else:
-                print("Enter a correct amount.")
+                print("Enter a positive amount.")
         elif action == "report":
             total_amount = 0
             print("--- Transaction Report ---")
