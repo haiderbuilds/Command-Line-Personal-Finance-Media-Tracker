@@ -72,11 +72,14 @@ def main():
         elif action == "quit":
             break
         elif action == "gamble":
-            
-
-
-
-
+            bank_balance -= 10
+            chance = random.randint(1, 5)
+            if chance == 4:
+                print("Congrats!!! You have win 100$.")
+                bank_balance += 100
+            else:
+                print("Sorry! You could not win.")
+                
         else:
             print("Invalid Action, Try Again.")
         print("Closing balance", format_currency(bank_balance))
