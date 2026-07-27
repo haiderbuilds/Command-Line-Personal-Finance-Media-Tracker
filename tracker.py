@@ -1,5 +1,5 @@
 import sys
-
+import random
 def deposit(balance, amount):
     balance += amount
     return balance
@@ -71,6 +71,12 @@ def main():
 
         elif action == "quit":
             break
+        elif action == "gamble":
+            
+
+
+
+
         else:
             print("Invalid Action, Try Again.")
         print("Closing balance", format_currency(bank_balance))
