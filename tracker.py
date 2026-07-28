@@ -4,8 +4,7 @@ def deposit(balance, amount):
     return balance + amount
 
 def withdraw(balance, amount):
-    balance -= amount
-    return balance
+    return balance - amount
 
 def format_currency(amount):
     return f"${amount:,.2f}"
