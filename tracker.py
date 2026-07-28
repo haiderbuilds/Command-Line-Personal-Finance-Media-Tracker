@@ -1,8 +1,7 @@
 import sys
 import random
 def deposit(balance, amount):
-    balance += amount
-    return balance
+    return balance + amount
 
 def withdraw(balance, amount):
     balance -= amount
