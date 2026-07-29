@@ -1,5 +1,8 @@
 import sys
+import requests
+import json
 import random
+
 def deposit(balance, amount):
     return balance + amount
 
@@ -77,6 +80,15 @@ def main():
                 bank_balance += 100
             else:
                 print("Sorry! You could not win.")
+        elif action == "buy song":
+            artist_name = input("Enter artis's name: ")
+            response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + artist_name)
+            o = response.json()
+            for result in o["results"]:
+                track_price = float(result["trackPrice"])
+                bank_balance -= track_price
+                print(result["trackName"])
+
                 
         else:
             print("Invalid Action, Try Again.")
