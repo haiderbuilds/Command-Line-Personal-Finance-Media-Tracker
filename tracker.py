@@ -70,14 +70,8 @@ def main():
                 print("Sorry! You could not win.")
         elif action == "buy song":
             artist_name = input("Enter artis's name: ")
-            response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + artist_name)
-            o = response.json()
-            for result in o["results"]:
-                track_price = float(result["trackPrice"])
-                bank_balance -= track_price
-                print(result["trackName"])
-
-                
+            bank_balance = helpers.buy_song(artist_name, bank_balance)
+  
         else:
             print("Invalid Action, Try Again.")
         print("Closing balance", helpers.format_currency(bank_balance))
