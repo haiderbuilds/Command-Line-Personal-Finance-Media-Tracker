@@ -1,2 +1,2 @@
 # Command-Line-Personal-Finance-Media-Tracker
-My first Python project
+This is a Python Command Line Project that provides you the ability to perform multiple type of transactions on your bank balance.
