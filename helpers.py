@@ -14,7 +14,7 @@ def get_float(prompt):
         except (EOFError, KeyboardInterrupt):
             print("\nExiting program gracefully...")
             sys.exit()
-
+#buy song
 def buy_song(artist_name, bank_balance):
     try:
         response = requests.get(
